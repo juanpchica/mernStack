@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const url = "http://localhost:5000/";
 
 export const ExercisesList = () => {
@@ -65,6 +66,12 @@ export const ExercisesList = () => {
                   >
                     Delete
                   </button>
+                  <Link
+                    to={"/edit/" + exercise._id}
+                    className="btn btn-primary"
+                  >
+                    Edit
+                  </Link>
                 </div>
               </div>
             </li>

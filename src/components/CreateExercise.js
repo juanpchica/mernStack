@@ -32,6 +32,8 @@ export const CreateExercise = () => {
   }, []);
 
   const saveExerciseDB = () => {
+    SetExercise({ ...exercise, date: new Date() });
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -64,7 +66,6 @@ export const CreateExercise = () => {
     ) {
       showAlert(true, "Please Fill out all fields!!", "danger");
     } else {
-      SetExercise({ ...exercise, date: new Date() });
       saveExerciseDB();
     }
   };

@@ -45,7 +45,7 @@ export const CreateExercise = () => {
         if (response.ok) {
           response.json();
         } else {
-          showAlert(true, "Error adding exercise", "danger");
+          showAlert(true, "Error adding exercise - verified now", "danger");
           throw new Error("Error adding exercise");
         }
       })

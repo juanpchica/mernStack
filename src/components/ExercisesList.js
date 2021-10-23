@@ -45,7 +45,6 @@ export const ExercisesList = () => {
     <>
       <ul className='list-group'>
         {exercises.map((exercise) => {
-          console.log(exercise);
           return (
             <li key={exercise._id} className='list-group-item'>
               <div className='row'>

@@ -38,6 +38,7 @@ export const CreateUser = () => {
       })
       .then((data) => {
         showAlert(true, "User added", "success");
+        SetUser({ username: "" });
       })
       .catch((error) => {
         showAlert(true, "Error adding User", "danger");

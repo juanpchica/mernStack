@@ -46,7 +46,7 @@ export const ExercisesList = () => {
       <ul className='list-group'>
         {exercises.map((exercise) => {
           return (
-            <li key={exercise._id} className='list-group-item'>
+            <li key={exercise._id} className='mb-3 list-group-item'>
               <div className='row'>
                 <div className='col'>
                   <h3>{exercise.username}</h3>
@@ -58,7 +58,7 @@ export const ExercisesList = () => {
                 </div>
                 <div className='col'>
                   <button
-                    className='btn btn-danger'
+                    className='mr-2 btn btn-danger'
                     onClick={() => {
                       deleteExercise(exercise._id);
                     }}

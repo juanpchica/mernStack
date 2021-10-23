@@ -43,7 +43,7 @@ export const ExercisesList = () => {
 
   return (
     <>
-      <ul className='list-group'>
+      <ul className='list-group list-top'>
         {exercises.map((exercise) => {
           return (
             <li key={exercise._id} className='mb-3 list-group-item'>

@@ -6,15 +6,6 @@ export const ExercisesList = () => {
   const [exercises, SetExercises] = useState([]);
   const [isLoading, SetIsLoading] = useState(true);
 
-  //Fetch users from users db
-  const getExercises = async () => {
-    const response = await fetch(url + "exercises/");
-    const exercises = await response.json();
-
-    SetExercises(exercises);
-    SetIsLoading(false);
-  };
-
   const deleteExercise = (id) => {
     fetch(url + "exercises/" + id, { method: "DELETE" })
       .then((response) => {
@@ -36,6 +27,15 @@ export const ExercisesList = () => {
   };
 
   useEffect(() => {
+    //Fetch users from users db
+    const getExercises = async () => {
+      const response = await fetch(url + "exercises/");
+      const data = await response.json();
+
+      SetExercises(data);
+      SetIsLoading(false);
+    };
+
     getExercises();
   }, [exercises]);
 
@@ -44,7 +44,8 @@ export const ExercisesList = () => {
   return (
     <>
       <ul className='list-group'>
-        {exercises.map((exercise, i) => {
+        {exercises.map((exercise) => {
+          console.log(exercise);
           return (
             <li key={exercise._id} className='list-group-item'>
               <div className='row'>

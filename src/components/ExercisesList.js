@@ -39,27 +39,26 @@ export const ExercisesList = () => {
     getExercises();
   }, [exercises]);
 
-  if (isLoading) {
-    return <section> Loading Content... </section>;
-  }
+  if (isLoading) return <section> Loading Content... </section>;
+
   return (
-    <div>
-      <ul className="list-group">
+    <>
+      <ul className='list-group'>
         {exercises.map((exercise, i) => {
           return (
-            <li key={exercise._id} className="list-group-item">
-              <div className="row">
-                <div className="col">
+            <li key={exercise._id} className='list-group-item'>
+              <div className='row'>
+                <div className='col'>
                   <h3>{exercise.username}</h3>
                   <h4>{exercise.description}</h4>
                   <div>
                     <span>Duration: {exercise.duration}</span>
-                    <span className="ml-5">Date: {exercise.date}</span>
+                    <span className='ml-5'>Date: {exercise.date}</span>
                   </div>
                 </div>
-                <div className="col">
+                <div className='col'>
                   <button
-                    className="btn btn-danger"
+                    className='btn btn-danger'
                     onClick={() => {
                       deleteExercise(exercise._id);
                     }}
@@ -68,7 +67,7 @@ export const ExercisesList = () => {
                   </button>
                   <Link
                     to={"/edit/" + exercise._id}
-                    className="btn btn-primary"
+                    className='btn btn-primary'
                   >
                     Edit
                   </Link>
@@ -78,6 +77,6 @@ export const ExercisesList = () => {
           );
         })}
       </ul>
-    </div>
+    </>
   );
 };
